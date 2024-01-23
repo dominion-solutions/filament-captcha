@@ -1,29 +1,27 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "dominion-solutions/filament-captcha",
+    "description": "CAPTCHA Plugin for Filament",
     "keywords": [
-        ":vendor_name",
+        "dominion-solutions",
         "laravel",
-        ":package_slug"
+        "filament-captcha"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/dominion-solutions/filament-captcha",
     "support": {
-        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
-        "source": "https://github.com/:vendor_slug/:package_slug"
+        "issues": "https://github.com/dominion-solutions/filament-captcha/issues",
+        "source": "https://github.com/dominion-solutions/filament-captcha"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Mark J. Horninger",
+            "email": "mark.horninger@dominion.solutions",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
-        "filament/filament": "^3.0",
         "filament/forms": "^3.0",
-        "filament/tables": "^3.0",
         "spatie/laravel-package-tools": "^1.15.0",
         "illuminate/contracts": "^10.0"
     },
@@ -42,13 +40,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "DominionSolutions\\FilamentCaptcha\\": "src/",
+            "DominionSolutions\\FilamentCaptcha\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "DominionSolutions\\FilamentCaptcha\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -68,10 +66,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "DominionSolutions\\FilamentCaptcha\\FilamentCaptchaServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentCaptcha": "DominionSolutions\\FilamentCaptcha\\Facades\\FilamentCaptcha"
             }
         }
     },
