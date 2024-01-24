@@ -6,8 +6,16 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/dominion-solutions/filament-captcha.svg?style=flat-square)](https://packagist.org/packages/dominion-solutions/filament-captcha)
 
 
+CAPTCHA Support in Filament!
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+[Skip to Installation](#installation)
+
+### What Is CAPTCHA?
+CAPTCHA stands for Completely Automated Public Turing test to tell Computers and Humans Apart.  The goal of this package is to keep bots from being able to submit fake data on your forms.  This should be the last (and not first) line of defense to keep bots from submitting garbage data to your unprotected forms.
+
+### Why do I need it?
+If you're using a public panel within your application to collect data, for example a comment box, or a lead funnel, it can be (at best) annoying or (worst) a security liability for bots to try to be able to submit data to a form.
+
 
 ## Installation
 

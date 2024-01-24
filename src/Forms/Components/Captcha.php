@@ -6,5 +6,5 @@ use Filament\Forms\Components\Field;
 
 class Captcha extends Field
 {
-    protected string $view = 'forms.components.captcha';
+    protected string $view = 'filament-captcha::form.components.captcha';
 }

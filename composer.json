@@ -39,6 +39,11 @@
         "phpstan/phpstan-phpunit": "^1.0",
         "spatie/laravel-ray": "^1.26"
     },
+    "suggest": {
+        "scyllaly/hcaptcha": "Required for hCaptcha support",
+        "scyllaly/recaptcha": "Required for reCAPTCHA support",
+        "mews/captcha": "Required for Mews Captcha support"
+    },
     "autoload": {
         "psr-4": {
             "DominionSolutions\\FilamentCaptcha\\": "src/",
