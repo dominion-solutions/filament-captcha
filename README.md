@@ -20,17 +20,13 @@ If you're using a public panel within your application to collect data, for exam
 ## Installation
 
 You can install the package via composer:
-
 ```bash
 composer require dominion-solutions/filament-captcha
 ```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="filament-captcha-migrations"
-php artisan migrate
-```
+You will also need a Captcha Provider.  Filament Captcha supports the following providers:
+|| Provider || Composer Package || Install Instructions ||
+| ---------- | ---------------- | ---------------------- |
+| {m’e} Web Studio Captcha | `composer require mews/captcha` | [https://github.com/mewebstudio/captcha?tab=readme-ov-file#installation](https://github.com/mewebstudio/captcha?tab=readme-ov-file#installation) |
 
 You can publish the config file with:
 
@@ -48,14 +44,24 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'engine' => env('CAPTCHA_ENGINE', 'mews'),
 ];
 ```
 
 ## Usage
-
+Usage with `mews/captcha`
 ```php
-$filamentCaptcha = new DominionSolutions\FilamentCaptcha();
-echo $filamentCaptcha->echoPhrase('Hello, DominionSolutions!');
+public function form(Form $form): Form
+{
+    return $form->schema([
+        Captcha::make('captcha')
+            ->rules(['captcha'])
+            ->required()
+            ->validationMessages([
+                'captcha'  =>  __('Captcha does not match the image'),
+            ]),
+        ]);
+    }
 ```
 
 ## Testing
