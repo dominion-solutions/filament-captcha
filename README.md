@@ -6,23 +6,27 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/dominion-solutions/filament-captcha.svg?style=flat-square)](https://packagist.org/packages/dominion-solutions/filament-captcha)
 
 
+CAPTCHA Support in Filament!
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+[Skip to Installation](#installation)
+
+### What Is CAPTCHA?
+CAPTCHA stands for Completely Automated Public Turing test to tell Computers and Humans Apart.  The goal of this package is to keep bots from being able to submit fake data on your forms.  This should be the last (and not first) line of defense to keep bots from submitting garbage data to your unprotected forms.
+
+### Why do I need it?
+If you're using a public panel within your application to collect data, for example a comment box, or a lead funnel, it can be (at best) annoying or (worst) a security liability for bots to try to be able to submit data to a form.
+
 
 ## Installation
 
 You can install the package via composer:
-
 ```bash
 composer require dominion-solutions/filament-captcha
 ```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="filament-captcha-migrations"
-php artisan migrate
-```
+You will also need a Captcha Provider.  Filament Captcha supports the following providers:
+|| Provider || Composer Package || Install Instructions ||
+| ---------- | ---------------- | ---------------------- |
+| {m’e} Web Studio Captcha | `composer require mews/captcha` | [https://github.com/mewebstudio/captcha?tab=readme-ov-file#installation](https://github.com/mewebstudio/captcha?tab=readme-ov-file#installation) |
 
 You can publish the config file with:
 
@@ -40,14 +44,24 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'engine' => env('CAPTCHA_ENGINE', 'mews'),
 ];
 ```
 
 ## Usage
-
+Usage with `mews/captcha`
 ```php
-$filamentCaptcha = new DominionSolutions\FilamentCaptcha();
-echo $filamentCaptcha->echoPhrase('Hello, DominionSolutions!');
+public function form(Form $form): Form
+{
+    return $form->schema([
+        Captcha::make('captcha')
+            ->rules(['captcha'])
+            ->required()
+            ->validationMessages([
+                'captcha'  =>  __('Captcha does not match the image'),
+            ]),
+        ]);
+    }
 ```
 
 ## Testing

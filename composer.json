@@ -21,9 +21,10 @@
     ],
     "require": {
         "php": "^8.1",
+        "filament/filament": "^3.2",
         "filament/forms": "^3.0",
-        "spatie/laravel-package-tools": "^1.15.0",
-        "illuminate/contracts": "^10.0"
+        "illuminate/contracts": "^10.0",
+        "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -37,6 +38,11 @@
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "spatie/laravel-ray": "^1.26"
+    },
+    "suggest": {
+        "scyllaly/hcaptcha": "Required for hCaptcha support",
+        "scyllaly/recaptcha": "Required for reCAPTCHA support",
+        "mews/captcha": "Required for Mews Captcha support"
     },
     "autoload": {
         "psr-4": {
