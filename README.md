@@ -24,9 +24,10 @@ You can install the package via composer:
 composer require dominion-solutions/filament-captcha
 ```
 You will also need a Captcha Provider.  Filament Captcha supports the following providers:
-|| Provider || Composer Package || Install Instructions ||
-| ---------- | ---------------- | ---------------------- |
+| Provider | Composer Package | Install Instructions |
+| -------- | ---------------- | -------------------- |
 | {m’e} Web Studio Captcha | `composer require mews/captcha` | [https://github.com/mewebstudio/captcha?tab=readme-ov-file#installation](https://github.com/mewebstudio/captcha?tab=readme-ov-file#installation) |
+
 
 You can publish the config file with:
 
@@ -41,7 +42,6 @@ php artisan vendor:publish --tag="filament-captcha-views"
 ```
 
 This is the contents of the published config file:
-
 ```php
 return [
     'engine' => env('CAPTCHA_ENGINE', 'mews'),
