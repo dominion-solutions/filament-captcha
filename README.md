@@ -26,7 +26,7 @@ composer require dominion-solutions/filament-captcha
 You will also need a Captcha Provider.  Filament Captcha supports the following providers:
 | Provider | Composer Package | Install Instructions |
 | -------- | ---------------- | -------------------- |
-| {m’e} Web Studio Captcha | `composer require mews/captcha` | [https://github.com/mewebstudio/captcha?tab=readme-ov-file#installation](https://github.com/mewebstudio/captcha?tab=readme-ov-file#installation) |
+| {m’e} Web Studio Captcha | `composer require mews/captcha` | [Installation](https://github.com/mewebstudio/captcha?tab=readme-ov-file#installation) |
 
 
 You can publish the config file with:
