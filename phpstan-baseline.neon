@@ -1,0 +1,7 @@
+parameters:
+    ignoreErrors:
+        -
+            identifier: larastan.noEnvCallsOutsideOfConfig
+            message: "#Called 'env' outside of the config directory#"
+            path: config/filament-captcha.php
+            count: 1

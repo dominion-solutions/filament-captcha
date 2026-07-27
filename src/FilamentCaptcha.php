@@ -2,6 +2,4 @@
 
 namespace DominionSolutions\FilamentCaptcha;
 
-class FilamentCaptcha
-{
-}
+class FilamentCaptcha {}
