@@ -58,9 +58,7 @@ class FilamentCaptchaServiceProvider extends PackageServiceProvider
         }
     }
 
-    public function packageRegistered(): void
-    {
-    }
+    public function packageRegistered(): void {}
 
     public function packageBooted(): void
     {
@@ -88,7 +86,7 @@ class FilamentCaptchaServiceProvider extends PackageServiceProvider
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentCaptcha());
+        Testable::mixin(new TestsFilamentCaptcha);
     }
 
     protected function getAssetPackageName(): ?string

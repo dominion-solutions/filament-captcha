@@ -1,5 +1,11 @@
 <?php
 
+use DominionSolutions\FilamentCaptcha\Commands\FilamentCaptchaCommand;
+use DominionSolutions\FilamentCaptcha\FilamentCaptcha;
+use DominionSolutions\FilamentCaptcha\FilamentCaptchaServiceProvider;
+use DominionSolutions\FilamentCaptcha\Forms\Components\Captcha;
+use DominionSolutions\FilamentCaptcha\Testing\TestsFilamentCaptcha;
+
 it('will not use debugging functions')
     ->expect(['dd', 'dump', 'ray', 'var_dump', 'print_r'])
     ->each->not->toBeUsed();
@@ -18,12 +24,12 @@ it('has no direct Log facade usage in source files')
 
 it('only uses classes in the correct root namespace')
     ->expect([
-        DominionSolutions\FilamentCaptcha\FilamentCaptcha::class,
-        DominionSolutions\FilamentCaptcha\FilamentCaptchaServiceProvider::class,
+        FilamentCaptcha::class,
+        FilamentCaptchaServiceProvider::class,
         DominionSolutions\FilamentCaptcha\Facades\FilamentCaptcha::class,
-        DominionSolutions\FilamentCaptcha\Forms\Components\Captcha::class,
-        DominionSolutions\FilamentCaptcha\Commands\FilamentCaptchaCommand::class,
-        DominionSolutions\FilamentCaptcha\Testing\TestsFilamentCaptcha::class,
+        Captcha::class,
+        FilamentCaptchaCommand::class,
+        TestsFilamentCaptcha::class,
     ])
     ->each
     ->toContain('DominionSolutions\\FilamentCaptcha');
